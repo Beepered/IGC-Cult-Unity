@@ -7,17 +7,13 @@ public class VariableController : MonoBehaviour
 {
     public int insanity, money, suspicion, people;
     public int insanity_mod, money_mod, suspicion_mod, people_mod; //these get applied to the total variables after a turn
-    public bool turn_end = false;
     int turns = 0;
-    public TMP_Text turn_text;
-    void Start()
-    {
+    public bool turn_end = false;
+    public TMP_Text turn_text, var_text;
 
-    }
-
-    // Update is called once per frame
     void Update()
     {
+        var_text.text = $"People: {people} + {people_mod}\nInsanity: {insanity} + {insanity_mod}\nSuspicion: {suspicion} + {suspicion_mod}\nMoney: {money} + {money_mod}";
         if (turn_end)
         {
             people += people_mod; //may have to move these around because they are dependent on if people are changed first or later
@@ -27,7 +23,6 @@ public class VariableController : MonoBehaviour
             turns++;
             turn_text.text = $"Turns: {turns}";
             turn_end = false;
-            Debug.Log($"insanity: {insanity}, money: {money}, suspicion: {suspicion}, people: {people}");
             if(insanity >= 100)
             {
                 Debug.Log("You WIN: Insanity was greater than or equal to 100");
@@ -38,6 +33,8 @@ public class VariableController : MonoBehaviour
             }
         }
     }
+
+    //REALLY NOT SURE IF THIS IS NECESSARY
 
     //direct changes to variables
     public void InsanitySet(int x)
