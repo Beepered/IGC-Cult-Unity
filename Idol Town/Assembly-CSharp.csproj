@@ -58,7 +58,10 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\VariableController.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\BuildingPlacer.cs" />
+    <Compile Include="Assets\Scripts\Selector.cs" />
     <Compile Include="Assets\Scripts\Building.cs" />
+    <Compile Include="Assets\Scripts\PlacementIndicator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -9,24 +9,24 @@ public class GameManager : MonoBehaviour
     public GridLayout gridLayout;
     private Grid grid;
 
+    private List<Building> building_prefabs = new List<Building>();
+    public static GameManager inst;
+
     void Start()
     {
+        inst = this;
         vc = GetComponent<VariableController>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnPlaceBuilding(Building building) //actually placing the building
     {
-        
-    }
+        vc.money -= building.cost;
+        vc.insanity_mod += building.insanity;
+        vc.suspicion_mod += building.suspicion;
+        vc.money_mod += building.money;
+        vc.people_mod += building.people;
 
-    public void BuyBuilding(Building building)
-    {
-        if(vc.money >= building.cost) //should only happen if/when the building is placed
-        {
-            vc.money -= building.cost;
-            BuildingToPlace = building;
-        }
+        building_prefabs.Add(building);
     }
 
     public void SellBuilding(Building building)
@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
 
         vc.money += building.cost / 2; //earn money back from selling, could give back certain amount or just half of the cost
         Destroy(building);
+        building_prefabs.Remove(building);
     }
 
     public void EndTurn()
