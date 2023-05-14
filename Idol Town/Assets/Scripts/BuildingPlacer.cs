@@ -5,7 +5,6 @@ using UnityEngine;
 public class BuildingPlacer : MonoBehaviour
 {
     private bool placing = false;
-    public bool can_place = true;
     private Building currBuilding;
 
     private float update_rate = 0.05f;
@@ -15,6 +14,9 @@ public class BuildingPlacer : MonoBehaviour
     public GameObject placementIndicator;
     public static BuildingPlacer inst;
     public VariableController vc;
+
+    public GameObject grid;
+    public Tile[] tiles;
 
     private void Awake()
     {
@@ -39,11 +41,22 @@ public class BuildingPlacer : MonoBehaviour
         }
         if (placing && Input.GetMouseButtonDown(0)) //clicked then place building
         {
-            if (can_place) //make sure it isn't overlapping an existing building
+            Tile nearest_tile = null;
+            float shortest_dist = float.MaxValue;
+            foreach(Tile t in tiles)
+            {
+                float dist = Vector3.Distance(t.transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));
+                if(dist < shortest_dist)
+                {
+                    shortest_dist = dist;
+                    nearest_tile = t;
+                }
+            }
+            if (!nearest_tile.occupied)
             {
                 PlaceBuilding();
+                nearest_tile.occupied = true;
             }
-            
         }
     }
 
@@ -54,20 +67,19 @@ public class BuildingPlacer : MonoBehaviour
             placing = true;
             currBuilding = building;
             placementIndicator.SetActive(true); //make it visible
+            grid.SetActive(true);
         }
     }
-
-    public void CancelPlacement()
-    {
-        placing = false;
-        placementIndicator.SetActive(false);
-    }
-
     void PlaceBuilding()
     {
         GameObject buildingObj = Instantiate(currBuilding.prefab, curr_Placement_Pos, Quaternion.identity);
         GameManager.inst.OnPlaceBuilding(currBuilding);
         CancelPlacement();
     }
-
+    public void CancelPlacement()
+    {
+        placing = false;
+        placementIndicator.SetActive(false);
+        grid.SetActive(false);
+    }
 }
