@@ -41,11 +41,12 @@ public class BuildingPlacer : MonoBehaviour
         }
         if (placing && Input.GetMouseButtonDown(0)) //clicked then place building
         {
+            Debug.Log("placing");
             Tile nearest_tile = null;
             float shortest_dist = float.MaxValue;
             foreach(Tile t in tiles)
             {
-                float dist = Vector3.Distance(t.transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));
+                float dist = Vector3.Distance(t.transform.position, placementIndicator.transform.position);
                 if(dist < shortest_dist)
                 {
                     shortest_dist = dist;
@@ -54,7 +55,7 @@ public class BuildingPlacer : MonoBehaviour
             }
             if (!nearest_tile.occupied)
             {
-                PlaceBuilding();
+                PlaceBuilding(nearest_tile.transform.position);
                 nearest_tile.occupied = true;
             }
         }
@@ -70,9 +71,9 @@ public class BuildingPlacer : MonoBehaviour
             grid.SetActive(true);
         }
     }
-    void PlaceBuilding()
+    void PlaceBuilding(Vector3 position)
     {
-        GameObject buildingObj = Instantiate(currBuilding.prefab, curr_Placement_Pos, Quaternion.identity);
+        GameObject buildingObj = Instantiate(currBuilding.prefab, position, Quaternion.identity);
         GameManager.inst.OnPlaceBuilding(currBuilding);
         CancelPlacement();
     }
