@@ -11,6 +11,9 @@ public class VariableController : MonoBehaviour
     public bool turn_end = false;
     public TMP_Text turn_text, var_text;
 
+    //building information text
+    public TMP_Text building_info;
+
     void Update()
     {
         var_text.text = $"People: {people} + {people_mod}\nInsanity: {insanity} + {insanity_mod}\nSuspicion: {suspicion} + {suspicion_mod}\nMoney: {money} + {money_mod}";
@@ -30,6 +33,20 @@ public class VariableController : MonoBehaviour
             else if(suspicion >= 100)
             {
                 Debug.Log("You LOSE: Suspicion was greater than or equal to 100");
+            }
+        }
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit))
+        {
+            if(hit.collider.tag == "Tile")
+            {
+                Tile obj = hit.collider.gameObject.GetComponent<Tile>(); //it is not getting the tile component
+                if (obj.occupied)
+                {
+                    building_info.text = obj.info_text;
+                    building_info.gameObject.SetActive(true);
+                }
             }
         }
     }

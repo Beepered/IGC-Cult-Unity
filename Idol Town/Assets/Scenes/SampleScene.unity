@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 21817697}
   m_Layer: 0
   m_Name: ML tile
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -171,9 +171,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupied: 0
-  green: {r: 0.045443196, g: 0.6509434, b: 0.09582109, a: 1}
-  red: {r: 0.4433962, g: 0.047685977, b: 0.047685977, a: 1}
+  green: {r: 0.07812387, g: 0.5377358, b: 0.113937795, a: 1}
+  red: {r: 0.5283019, g: 0.07675327, b: 0.07675327, a: 1}
   renderer: {fileID: 21817699}
+  building: {fileID: 0}
+  building_object: {fileID: 0}
+  building_name: 
+  cost: 0
+  insanity: 0
+  money: 0
+  suspicion: 0
+  people: 0
+  info_text: 
 --- !u!65 &21817698
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -194,7 +203,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 21817695}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -252,7 +261,7 @@ GameObject:
   - component: {fileID: 63150640}
   m_Layer: 0
   m_Name: BR tile
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -285,9 +294,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupied: 0
-  green: {r: 0.045443196, g: 0.6509434, b: 0.09582109, a: 1}
-  red: {r: 0.4433962, g: 0.047685977, b: 0.047685977, a: 1}
+  green: {r: 0.07812387, g: 0.5377358, b: 0.113937795, a: 1}
+  red: {r: 0.5283019, g: 0.07675327, b: 0.07675327, a: 1}
   renderer: {fileID: 63150642}
+  building: {fileID: 0}
+  building_object: {fileID: 0}
+  building_name: 
+  cost: 0
+  insanity: 0
+  money: 0
+  suspicion: 0
+  people: 0
+  info_text: 
 --- !u!65 &63150641
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -308,7 +326,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 63150638}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -366,7 +384,7 @@ GameObject:
   - component: {fileID: 254868897}
   m_Layer: 0
   m_Name: MR tile
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -399,9 +417,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupied: 0
-  green: {r: 0.045443196, g: 0.6509434, b: 0.09582109, a: 1}
-  red: {r: 0.4433962, g: 0.047685977, b: 0.047685977, a: 1}
+  green: {r: 0.07812387, g: 0.5377358, b: 0.113937795, a: 1}
+  red: {r: 0.5283019, g: 0.07675327, b: 0.07675327, a: 1}
   renderer: {fileID: 254868899}
+  building: {fileID: 0}
+  building_object: {fileID: 0}
+  building_name: 
+  cost: 0
+  insanity: 0
+  money: 0
+  suspicion: 0
+  people: 0
+  info_text: 
 --- !u!65 &254868898
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -422,7 +449,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 254868895}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -480,7 +507,7 @@ GameObject:
   - component: {fileID: 280822975}
   m_Layer: 0
   m_Name: MM tile
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -513,9 +540,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupied: 0
-  green: {r: 0.045443196, g: 0.6509434, b: 0.09582109, a: 1}
-  red: {r: 0.4433962, g: 0.047685977, b: 0.047685977, a: 1}
+  green: {r: 0.07812387, g: 0.5377358, b: 0.113937795, a: 1}
+  red: {r: 0.5283019, g: 0.07675327, b: 0.07675327, a: 1}
   renderer: {fileID: 280822977}
+  building: {fileID: 0}
+  building_object: {fileID: 0}
+  building_name: 
+  cost: 0
+  insanity: 0
+  money: 0
+  suspicion: 0
+  people: 0
+  info_text: 
 --- !u!65 &280822976
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -536,7 +572,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 280822973}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -804,6 +840,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1563602367}
+  - {fileID: 1558074921}
   m_Father: {fileID: 2066450040}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1094,7 +1131,7 @@ GameObject:
   - component: {fileID: 877593704}
   m_Layer: 0
   m_Name: BL tile
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1127,9 +1164,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupied: 0
-  green: {r: 0.045443196, g: 0.6509434, b: 0.09582109, a: 1}
-  red: {r: 0.4433962, g: 0.047685977, b: 0.047685977, a: 1}
+  green: {r: 0.07812387, g: 0.5377358, b: 0.113937795, a: 1}
+  red: {r: 0.5283019, g: 0.07675327, b: 0.07675327, a: 1}
   renderer: {fileID: 877593706}
+  building: {fileID: 0}
+  building_object: {fileID: 0}
+  building_name: 
+  cost: 0
+  insanity: 0
+  money: 0
+  suspicion: 0
+  people: 0
+  info_text: 
 --- !u!65 &877593705
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1150,7 +1196,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 877593702}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1270,7 +1316,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.53729963, y: 0, z: 0, w: 0.8433915}
-  m_LocalPosition: {x: 0, y: 8, z: -4.5}
+  m_LocalPosition: {x: 0, y: 8, z: -3.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1304,7 +1350,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 987482716}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.25, y: 0, z: -0.25}
   m_LocalScale: {x: 1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1324,7 +1370,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 3, z: 0}
 --- !u!54 &987482719
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1357,6 +1403,8 @@ MonoBehaviour:
   renderer: {fileID: 1023468046}
   available: {r: 0.17543605, g: 0.47320297, b: 0.8301887, a: 1}
   unavailable: {r: 0.5471698, g: 0.012388734, b: 0.012388734, a: 1}
+  placing: 0
+  selling: 0
 --- !u!1 &1023468043
 GameObject:
   m_ObjectHideFlags: 0
@@ -1368,7 +1416,6 @@ GameObject:
   - component: {fileID: 1023468044}
   - component: {fileID: 1023468047}
   - component: {fileID: 1023468046}
-  - component: {fileID: 1023468045}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -1385,25 +1432,12 @@ Transform:
   m_GameObject: {fileID: 1023468043}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 4, z: 0}
-  m_LocalScale: {x: 1, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.3, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 987482717}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1023468045
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1023468043}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1023468046
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1469,7 +1503,7 @@ GameObject:
   - component: {fileID: 1037569511}
   m_Layer: 0
   m_Name: TL tile
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1502,9 +1536,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupied: 0
-  green: {r: 0.045443196, g: 0.6509434, b: 0.09582109, a: 1}
-  red: {r: 0.4433962, g: 0.047685977, b: 0.047685977, a: 1}
+  green: {r: 0.07812387, g: 0.5377358, b: 0.113937795, a: 1}
+  red: {r: 0.5283019, g: 0.07675327, b: 0.07675327, a: 1}
   renderer: {fileID: 1037569513}
+  building: {fileID: 0}
+  building_object: {fileID: 0}
+  building_name: 
+  cost: 0
+  insanity: 0
+  money: 0
+  suspicion: 0
+  people: 0
+  info_text: 
 --- !u!65 &1037569512
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1525,7 +1568,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1037569509}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1583,7 +1626,7 @@ GameObject:
   - component: {fileID: 1161322773}
   m_Layer: 0
   m_Name: TM tile
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1616,9 +1659,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupied: 0
-  green: {r: 0.045443196, g: 0.6509434, b: 0.09582109, a: 1}
-  red: {r: 0.4433962, g: 0.047685977, b: 0.047685977, a: 1}
+  green: {r: 0.07812387, g: 0.5377358, b: 0.113937795, a: 1}
+  red: {r: 0.5283019, g: 0.07675327, b: 0.07675327, a: 1}
   renderer: {fileID: 1161322775}
+  building: {fileID: 0}
+  building_object: {fileID: 0}
+  building_name: 
+  cost: 0
+  insanity: 0
+  money: 0
+  suspicion: 0
+  people: 0
+  info_text: 
 --- !u!65 &1161322774
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1639,7 +1691,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1161322771}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1980,13 +2032,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1736081245}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 1736081249}
+        m_TargetAssemblyTypeName: BuildingPlacer, Assembly-CSharp
+        m_MethodName: BeginSelling
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: Building, Assembly-CSharp
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2143,7 +2195,7 @@ GameObject:
   - component: {fileID: 1298968870}
   m_Layer: 0
   m_Name: TR tile
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2176,9 +2228,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupied: 0
-  green: {r: 0.045443196, g: 0.6509434, b: 0.09582109, a: 1}
-  red: {r: 0.4433962, g: 0.047685977, b: 0.047685977, a: 1}
+  green: {r: 0.07812387, g: 0.5377358, b: 0.113937795, a: 1}
+  red: {r: 0.5283019, g: 0.07675327, b: 0.07675327, a: 1}
   renderer: {fileID: 1298968872}
+  building: {fileID: 0}
+  building_object: {fileID: 0}
+  building_name: 
+  cost: 0
+  insanity: 0
+  money: 0
+  suspicion: 0
+  people: 0
+  info_text: 
 --- !u!65 &1298968871
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2199,7 +2260,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1298968868}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2257,7 +2318,7 @@ GameObject:
   - component: {fileID: 1327222636}
   m_Layer: 0
   m_Name: BM tile
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2290,9 +2351,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupied: 0
-  green: {r: 0.045443196, g: 0.6509434, b: 0.09582109, a: 1}
-  red: {r: 0.4433962, g: 0.047685977, b: 0.047685977, a: 1}
+  green: {r: 0.07812387, g: 0.5377358, b: 0.113937795, a: 1}
+  red: {r: 0.5283019, g: 0.07675327, b: 0.07675327, a: 1}
   renderer: {fileID: 1327222638}
+  building: {fileID: 0}
+  building_object: {fileID: 0}
+  building_name: 
+  cost: 0
+  insanity: 0
+  money: 0
+  suspicion: 0
+  people: 0
+  info_text: 
 --- !u!65 &1327222637
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2313,7 +2383,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1327222634}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2491,6 +2561,156 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1489925523}
   m_CullTransparentMesh: 1
+--- !u!1 &1558074920
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1558074921}
+  - component: {fileID: 1558074923}
+  - component: {fileID: 1558074922}
+  m_Layer: 5
+  m_Name: Building Info
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1558074921
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558074920}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 615548166}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1558074922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558074920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 'Name
+
+
+    Every turn:
+
+    0 people
+
+    0 insanity
+
+    0 suspicion
+
+    0
+    money
+
+
+    sold: generates _'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 17
+  m_fontSizeBase: 17
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 2048
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: -137.53781}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1558074923
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558074920}
+  m_CullTransparentMesh: 1
 --- !u!1 &1563602366
 GameObject:
   m_ObjectHideFlags: 0
@@ -2556,7 +2776,7 @@ MonoBehaviour:
     Suspicion: 0 + 0
 
     Money:
-    50 + 0'
+    100 + 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2649,7 +2869,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!156049354 &1569883091
 Grid:
   m_ObjectHideFlags: 0
@@ -2733,7 +2953,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   insanity: 0
-  money: 50
+  money: 100
   suspicion: 0
   people: 50
   insanity_mod: 0
@@ -2743,6 +2963,7 @@ MonoBehaviour:
   turn_end: 0
   turn_text: {fileID: 1489925525}
   var_text: {fileID: 1563602368}
+  building_info: {fileID: 1558074922}
 --- !u!4 &1736081247
 Transform:
   m_ObjectHideFlags: 0
@@ -2784,7 +3005,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   placementIndicator: {fileID: 987482716}
   vc: {fileID: 1736081246}
-  grid: {fileID: 1569883090}
   tiles:
   - {fileID: 1037569511}
   - {fileID: 1161322773}

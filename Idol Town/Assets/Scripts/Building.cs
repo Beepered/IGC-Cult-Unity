@@ -7,7 +7,7 @@ using UnityEditor;
 public class Building : ScriptableObject
 {
     public GameObject prefab;
-    public string display_name;
+    public string name;
     public int cost;
     public int insanity, money, suspicion, people;
 }

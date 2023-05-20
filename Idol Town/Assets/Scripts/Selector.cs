@@ -14,6 +14,7 @@ public class Selector : MonoBehaviour
 {
     private Camera cam;
     public static Selector inst;
+    //public GameObject cursor; //To get information from tiles
 
     private void Awake()
     {
@@ -24,6 +25,7 @@ public class Selector : MonoBehaviour
     {
         cam = Camera.main; //get the camera
     }
+
 
     public Vector3 GetCurTilePosition() //return the tile you are hovering over
     {

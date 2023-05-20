@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour
     public GridLayout gridLayout;
     private Grid grid;
 
-    private List<Building> building_prefabs = new List<Building>();
     public static GameManager inst;
 
     void Start()
@@ -25,8 +24,6 @@ public class GameManager : MonoBehaviour
         vc.suspicion_mod += building.suspicion;
         vc.money_mod += building.money;
         vc.people_mod += building.people;
-
-        building_prefabs.Add(building);
     }
 
     public void SellBuilding(Building building)
@@ -37,8 +34,6 @@ public class GameManager : MonoBehaviour
         vc.people_mod -= building.people;
 
         vc.money += building.cost / 2; //earn money back from selling, could give back certain amount or just half of the cost
-        Destroy(building);
-        building_prefabs.Remove(building);
     }
 
     public void EndTurn()

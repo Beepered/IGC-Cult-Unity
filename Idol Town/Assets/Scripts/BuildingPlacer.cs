@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BuildingPlacer : MonoBehaviour
 {
-    private bool placing = false;
+    private bool placing = false, selling = false;
     private Building currBuilding;
 
     private float update_rate = 0.05f;
@@ -14,8 +14,6 @@ public class BuildingPlacer : MonoBehaviour
     public GameObject placementIndicator;
     public static BuildingPlacer inst;
     public VariableController vc;
-
-    public GameObject grid;
     public Tile[] tiles;
 
     private void Awake()
@@ -33,7 +31,7 @@ public class BuildingPlacer : MonoBehaviour
             CancelPlacement();
         }
             
-        if (Time.time - last_update_time > update_rate && placing) //snap to grid
+        if (Time.time - last_update_time > update_rate && (placing || selling)) //snap to grid
         {
             last_update_time = Time.time;
             curr_Placement_Pos = Selector.inst.GetCurTilePosition();
@@ -41,7 +39,6 @@ public class BuildingPlacer : MonoBehaviour
         }
         if (placing && Input.GetMouseButtonDown(0)) //clicked then place building
         {
-            Debug.Log("placing");
             Tile nearest_tile = null;
             float shortest_dist = float.MaxValue;
             foreach(Tile t in tiles)
@@ -55,8 +52,32 @@ public class BuildingPlacer : MonoBehaviour
             }
             if (!nearest_tile.occupied)
             {
-                PlaceBuilding(nearest_tile.transform.position);
+                PlaceBuilding(nearest_tile.transform.position, nearest_tile);
                 nearest_tile.occupied = true;
+                nearest_tile.building = currBuilding;
+            }
+        }
+        else if(selling && Input.GetMouseButtonDown(0))
+        {
+            Tile nearest_tile = null;
+            float shortest_dist = float.MaxValue;
+            foreach (Tile t in tiles)
+            {
+                float dist = Vector3.Distance(t.transform.position, placementIndicator.transform.position);
+                if (dist < shortest_dist)
+                {
+                    shortest_dist = dist;
+                    nearest_tile = t;
+                }
+            }
+            if (nearest_tile.occupied)
+            {
+                GameManager.inst.SellBuilding(nearest_tile.building);
+                nearest_tile.building = null;
+                Destroy(nearest_tile.building_object);
+                nearest_tile.occupied = false;
+                
+                CancelPlacement();
             }
         }
     }
@@ -65,22 +86,46 @@ public class BuildingPlacer : MonoBehaviour
     {
         if(vc.money >= building.cost)
         {
-            placing = true;
+            selling = true; //if you are selling but want to place instead
+            placing = true; //you can place buildings now
             currBuilding = building;
             placementIndicator.SetActive(true); //make it visible
-            grid.SetActive(true);
+            placementIndicator.GetComponent<PlacementIndicator>().placing = true;
+            foreach (Tile t in tiles)
+            {
+                t.GetComponent<Renderer>().enabled = true;
+            }
         }
     }
-    void PlaceBuilding(Vector3 position)
+    void PlaceBuilding(Vector3 position, Tile tile)
     {
         GameObject buildingObj = Instantiate(currBuilding.prefab, position, Quaternion.identity);
+        tile.building_object = buildingObj;
         GameManager.inst.OnPlaceBuilding(currBuilding);
         CancelPlacement();
     }
     public void CancelPlacement()
     {
         placing = false;
+        selling = false;
+        placementIndicator.GetComponent<PlacementIndicator>().placing = false;
+        placementIndicator.GetComponent<PlacementIndicator>().selling = false;
         placementIndicator.SetActive(false);
-        grid.SetActive(false);
+        foreach (Tile t in tiles)
+        {
+            t.GetComponent<Renderer>().enabled = false;
+        }
+    }
+
+    public void BeginSelling()
+    {
+        placing = false; //if you are placing but want to sell instead
+        selling = true;
+        placementIndicator.SetActive(true);
+        placementIndicator.GetComponent<PlacementIndicator>().selling = true;
+        foreach (Tile t in tiles)
+        {
+            t.GetComponent<Renderer>().enabled = true;
+        }
     }
 }

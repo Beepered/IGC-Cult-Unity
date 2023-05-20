@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Building 2
   m_EditorClassIdentifier: 
   prefab: {fileID: 6031994099968627476, guid: 96f1755b01ada724cb1621897278a532, type: 3}
-  display_name: Two
+  name: Two
   cost: 20
   insanity: 0
   money: 6

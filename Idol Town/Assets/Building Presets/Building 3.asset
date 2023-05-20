@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Building 3
   m_EditorClassIdentifier: 
   prefab: {fileID: 1051111298712656800, guid: 02646823b44e71d43b44475deff0ab20, type: 3}
-  display_name: Three
+  name: Three
   cost: 20
   insanity: 2
   money: 4
