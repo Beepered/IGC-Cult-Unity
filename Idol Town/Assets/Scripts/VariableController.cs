@@ -41,14 +41,46 @@ public class VariableController : MonoBehaviour
         {
             if(hit.collider.tag == "Tile")
             {
-                Tile obj = hit.collider.gameObject.GetComponent<Tile>(); //it is not getting the tile component
+                Tile obj = hit.collider.gameObject.GetComponent<Tile>();
                 if (obj.occupied)
                 {
                     building_info.text = obj.info_text;
                     building_info.gameObject.SetActive(true);
                 }
+                else
+                {
+                    building_info.gameObject.SetActive(false);
+                }
             }
         }
+    }
+
+    public void BuildingInfo(Building building)
+    {
+        building_info.text = building.name + ": " + building.cost + "\n\nEvery turn:\n";
+        if (building.insanity != 0)
+        {
+            building_info.text += building.insanity + " insanity\n";
+        }
+        if (building.suspicion != 0)
+        {
+            building_info.text += building.suspicion + " suspicion\n";
+        }
+        if (building.money != 0)
+        {
+            building_info.text += building.money + " money\n";
+        }
+        if (building.people != 0)
+        {
+            building_info.text += building.people + " people\n";
+        }
+        building_info.text += "\nsold: " + building.cost / 2;
+        building_info.gameObject.SetActive(true);
+    }
+
+    public void ExitBuildingInfo()
+    {
+        building_info.gameObject.SetActive(false);
     }
 
 }

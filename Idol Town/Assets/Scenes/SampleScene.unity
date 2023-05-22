@@ -627,6 +627,7 @@ GameObject:
   - component: {fileID: 323494432}
   - component: {fileID: 323494431}
   - component: {fileID: 323494430}
+  - component: {fileID: 323494433}
   m_Layer: 5
   m_Name: Building 2 Button
   m_TagString: Untagged
@@ -748,6 +749,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 323494428}
   m_CullTransparentMesh: 1
+--- !u!114 &323494433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 323494428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1736081246}
+          m_TargetAssemblyTypeName: VariableController, Assembly-CSharp
+          m_MethodName: BuildingInfo
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: 4c5387e65a055304a8546a9ac3c4a723, type: 2}
+            m_ObjectArgumentAssemblyTypeName: Building, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1736081246}
+          m_TargetAssemblyTypeName: VariableController, Assembly-CSharp
+          m_MethodName: ExitBuildingInfo
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &576642886
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1746,6 +1792,7 @@ GameObject:
   - component: {fileID: 1226365239}
   - component: {fileID: 1226365238}
   - component: {fileID: 1226365237}
+  - component: {fileID: 1226365240}
   m_Layer: 5
   m_Name: Building 1 Button
   m_TagString: Untagged
@@ -1849,7 +1896,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 991b235e77a3b504f88afdd744be8756, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f35b11396db6d452f80c3921b0ade2e7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1867,6 +1914,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1226365235}
   m_CullTransparentMesh: 1
+--- !u!114 &1226365240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226365235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1736081246}
+          m_TargetAssemblyTypeName: VariableController, Assembly-CSharp
+          m_MethodName: BuildingInfo
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: e12929018567982489b06b0ede8d708f, type: 2}
+            m_ObjectArgumentAssemblyTypeName: Building, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1736081246}
+          m_TargetAssemblyTypeName: VariableController, Assembly-CSharp
+          m_MethodName: ExitBuildingInfo
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1260878409
 GameObject:
   m_ObjectHideFlags: 0
@@ -3027,6 +3119,7 @@ GameObject:
   - component: {fileID: 1825335019}
   - component: {fileID: 1825335018}
   - component: {fileID: 1825335017}
+  - component: {fileID: 1825335020}
   m_Layer: 5
   m_Name: Building 3 Button
   m_TagString: Untagged
@@ -3148,6 +3241,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1825335015}
   m_CullTransparentMesh: 1
+--- !u!114 &1825335020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825335015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1736081246}
+          m_TargetAssemblyTypeName: VariableController, Assembly-CSharp
+          m_MethodName: BuildingInfo
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: 931de9ad87087d943bdc81df0b69c61e, type: 2}
+            m_ObjectArgumentAssemblyTypeName: Building, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1736081246}
+          m_TargetAssemblyTypeName: VariableController, Assembly-CSharp
+          m_MethodName: ExitBuildingInfo
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1862593033
 GameObject:
   m_ObjectHideFlags: 0
