@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public VariableController vc;
+    public EventHandler eh;
     private Building BuildingToPlace;
     public GridLayout gridLayout;
     private Grid grid;
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour
         vc.people_mod -= building.people;
 
         vc.money += building.cost / 2; //earn money back from selling, could give back certain amount or just half of the cost
+        vc.suspicion += building.suspicion_destruction;
     }
 
     public void EndTurn()

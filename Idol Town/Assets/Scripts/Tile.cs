@@ -15,8 +15,9 @@ public class Tile : MonoBehaviour
 
     public string building_name;
     public int cost;
-    public int insanity, money, suspicion, people;
-    public string info_text; //variable controller will just take this text so it looks better
+    public int insanity, money, suspicion, suspicion_destruction;
+    public float people;
+    public string info_text; //variable controller will just take this string so it looks better
 
     void Start()
     {
@@ -34,6 +35,7 @@ public class Tile : MonoBehaviour
             money = building.money;
             suspicion = building.suspicion;
             people = building.people;
+            suspicion_destruction = building.suspicion_destruction;
 
             //text for when the cursor is over the object
             info_text = building_name + ": " + cost + "\n\nEvery turn:\n";
@@ -54,6 +56,10 @@ public class Tile : MonoBehaviour
                 info_text += people + " people\n";
             }
             info_text += "\nsold: " + cost / 2;
+            if (suspicion_destruction != 0)
+            {
+                info_text += " + " + suspicion_destruction + " suspicion";
+            }
         }
         else
         {

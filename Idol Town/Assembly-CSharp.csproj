@@ -60,6 +60,7 @@
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\PlacementIndicator.cs" />
     <Compile Include="Assets\Scripts\BuildingPlacer.cs" />
+    <Compile Include="Assets\Scripts\EventHandler.cs" />
     <Compile Include="Assets\Scripts\Tile.cs" />
     <Compile Include="Assets\Scripts\Selector.cs" />
     <Compile Include="Assets\Scripts\Building.cs" />

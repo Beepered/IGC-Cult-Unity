@@ -5,24 +5,27 @@ using TMPro;
 
 public class VariableController : MonoBehaviour
 {
-    public int insanity, money, suspicion, people;
-    public int insanity_mod, money_mod, suspicion_mod, people_mod; //these get applied to the total variables after a turn
-    int turns = 0;
+    public int insanity, money, suspicion;
+    public int insanity_mod, money_mod, suspicion_mod; //these get applied to the total variables after a turn
+    public float people_mod;
+    public float event_people_mod = 1, event_insanity_mod = 1, event_money_mod = 1, event_suspicion_mod = 1; //event changes because it applies to all buildings
+    public int turns = 0;
     public bool turn_end = false;
     public TMP_Text turn_text, var_text;
 
     //building information text
     public TMP_Text building_info;
 
+    public EventHandler eh;
+
     void Update()
     {
-        var_text.text = $"People: {people} + {people_mod}\nInsanity: {insanity} + {insanity_mod}\nSuspicion: {suspicion} + {suspicion_mod}\nMoney: {money} + {money_mod}";
+        var_text.text = $"Population: {people_mod * 100}%\nInsanity: {insanity} + ({insanity_mod} * {(people_mod * event_insanity_mod) * 100}%)\nSuspicion: {suspicion} + ({suspicion_mod} * {people_mod * event_suspicion_mod * 100}%)\nMoney: {money} + ({money_mod} * {people_mod * event_money_mod * 100}%)";
         if (turn_end)
         {
-            people += people_mod; //may have to move these around because they are dependent on if people are changed first or later
-            insanity += insanity_mod * (people / 50); //people modify variables, but it has to be a large enough population
-            money += money_mod * (people / 50);
-            suspicion += suspicion_mod * (people / 50);
+            insanity += (int) (insanity_mod * (people_mod * event_insanity_mod)); //people modify variables, but it has to be a large enough population
+            suspicion += (int) (suspicion_mod * (people_mod * event_suspicion_mod));
+            money += (int) (money_mod * (people_mod * event_money_mod));
             turns++;
             turn_text.text = $"Turns: {turns}";
             turn_end = false;
@@ -34,6 +37,7 @@ public class VariableController : MonoBehaviour
             {
                 Debug.Log("You LOSE: Suspicion was greater than or equal to 100");
             }
+            eh.RandomEvent(); //event changes happen after variable changes because production event changes happen after you press ok
         }
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;

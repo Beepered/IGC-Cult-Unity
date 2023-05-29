@@ -9,5 +9,7 @@ public class Building : ScriptableObject
     public GameObject prefab;
     public string name;
     public int cost;
-    public int insanity, money, suspicion, people;
+    public int insanity, money, suspicion;
+    public float people;
+    public int suspicion_destruction;
 }
