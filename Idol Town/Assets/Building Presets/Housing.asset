@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c036087b4b2482146ac399f86e483fd5, type: 3}
   m_Name: Housing
   m_EditorClassIdentifier: 
-  prefab: {fileID: 520605989824093062, guid: 8b179e63920001c4da92efd742d0e55b, type: 3}
+  prefab: {fileID: 6031994099968627476, guid: 96f1755b01ada724cb1621897278a532, type: 3}
   name: Housing
   cost: 20
   insanity: 0
