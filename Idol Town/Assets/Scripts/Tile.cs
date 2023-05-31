@@ -19,6 +19,8 @@ public class Tile : MonoBehaviour
     public float people;
     public string info_text; //variable controller will just take this string so it looks better
 
+    public VariableController vc;
+
     void Start()
     {
         renderer.material.color = Color.green;
@@ -36,6 +38,10 @@ public class Tile : MonoBehaviour
             suspicion = building.suspicion;
             people = building.people;
             suspicion_destruction = building.suspicion_destruction;
+            if (building_name == "Church") //if the building is a church then you do this
+            {
+                insanity = vc.suspicion / 4;
+            }
 
             //text for when the cursor is over the object
             info_text = building_name + ": " + cost + "\n\nEvery turn:\n";

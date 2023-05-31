@@ -23,9 +23,9 @@ public class VariableController : MonoBehaviour
         var_text.text = $"Population: {people_mod * 100}%\nInsanity: {insanity} + ({insanity_mod} * {(people_mod * event_insanity_mod) * 100}%)\nSuspicion: {suspicion} + ({suspicion_mod} * {people_mod * event_suspicion_mod * 100}%)\nMoney: {money} + ({money_mod} * {people_mod * event_money_mod * 100}%)";
         if (turn_end)
         {
-            insanity += (int) (insanity_mod * (people_mod * event_insanity_mod)); //people modify variables, but it has to be a large enough population
-            suspicion += (int) (suspicion_mod * (people_mod * event_suspicion_mod));
-            money += (int) (money_mod * (people_mod * event_money_mod));
+            insanity += (int) (insanity_mod * ((people_mod * event_people_mod) * event_insanity_mod)); //people modify variables, but it has to be a large enough population
+            suspicion += (int) (suspicion_mod * ((people_mod * event_people_mod) * event_suspicion_mod));
+            money += (int) (money_mod * ((people_mod * event_people_mod) * event_money_mod));
             turns++;
             turn_text.text = $"Turns: {turns}";
             turn_end = false;

@@ -226,9 +226,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 10590000
-      m_LastClickedID: 22800
-      m_ExpandedIDs: 2efbffff0c58000044590000
+      m_SelectedIDs: a05a0000
+      m_LastClickedID: 23200
+      m_ExpandedIDs: 86dbffff3ef9ffff5c5a0000a05a0000065b0000d05b0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -560,9 +560,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 448.5229, y: 200.05557, z: 0}
+    m_Target: {x: 258.19626, y: 222.73958, z: -0.31854248}
     speed: 2
-    m_Value: {x: 448.5229, y: 200.05557, z: 0}
+    m_Value: {x: 258.19626, y: 222.73958, z: -0.31854248}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -609,17 +609,17 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0, y: 0, z: 0, w: 1}
+    m_Target: {x: 0.0014999927, y: 0.002999992, z: -0.0000044999915, w: 0.99999434}
     speed: 2
-    m_Value: {x: -0, y: 0, z: -0, w: -1}
+    m_Value: {x: 0.0014999979, y: -0.0014999979, z: 0.000002249999, w: 0.9999978}
   m_Size:
-    m_Target: 237.31653
+    m_Target: 213.94221
     speed: 2
-    m_Value: 237.31653
+    m_Value: 213.94221
   m_Ortho:
-    m_Target: 0
+    m_Target: 1
     speed: 2
-    m_Value: 0
+    m_Value: 1
   m_CameraSettings:
     m_Speed: 1
     m_SpeedNormalized: 0.5
@@ -650,7 +650,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ConsoleWindow
+  m_Name: ProjectBrowser
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -659,14 +659,14 @@ MonoBehaviour:
     y: 432.8
     width: 1172.8
     height: 298
-  m_MinSize: {x: 101, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 11}
+  m_MinSize: {x: 231, y: 271}
+  m_MaxSize: {x: 10001, y: 10021}
+  m_ActualView: {fileID: 10}
   m_Panes:
   - {fileID: 10}
   - {fileID: 11}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -709,22 +709,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Building Presets
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Building Presets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Bktri\Unity Games\Cult\Idol Town
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 885a0000
-    m_LastClickedID: 23176
-    m_ExpandedIDs: 00000000725a000000ca9a3b
+    m_SelectedIDs: c25c0000
+    m_LastClickedID: 23746
+    m_ExpandedIDs: 00000000b85c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -752,7 +752,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000725a000000ca9a3b
+    m_ExpandedIDs: 00000000b85c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -777,8 +777,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: ac160000
-    m_LastClickedInstanceID: 5804
+    m_SelectedInstanceIDs: a05a0000
+    m_LastClickedInstanceID: 23200
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c623000000000000925a0000
     m_RenameOverlay:
@@ -856,8 +856,8 @@ MonoBehaviour:
     y: 0
     width: 363.19995
     height: 730.8
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}

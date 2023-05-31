@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 520605989824093062, guid: 8b179e63920001c4da92efd742d0e55b, type: 3}
   name: Government
-  cost: 0
-  insanity: 0
+  cost: 80
+  insanity: -1
+  suspicion: -5
   money: 0
-  suspicion: 0
   people: 0
-  suspicion_destruction: 0
+  suspicion_destruction: 20
