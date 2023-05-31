@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c036087b4b2482146ac399f86e483fd5, type: 3}
   m_Name: Bar
   m_EditorClassIdentifier: 
-  prefab: {fileID: 6031994099968627476, guid: 96f1755b01ada724cb1621897278a532, type: 3}
+  prefab: {fileID: 1051111298712656800, guid: 02646823b44e71d43b44475deff0ab20, type: 3}
   name: Bar
   cost: 40
   insanity: 0

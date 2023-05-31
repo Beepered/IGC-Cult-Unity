@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c036087b4b2482146ac399f86e483fd5, type: 3}
   m_Name: Government
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
-  name: 
+  prefab: {fileID: 520605989824093062, guid: 8b179e63920001c4da92efd742d0e55b, type: 3}
+  name: Government
   cost: 0
   insanity: 0
   money: 0
