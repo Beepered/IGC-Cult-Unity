@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7387328858154635981}
   - component: {fileID: 4951336570224798636}
-  - component: {fileID: -1741348008931913050}
   m_Layer: 0
   m_Name: Building 2 prefab
   m_TagString: Building
@@ -50,19 +49,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &-1741348008931913050
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1051111298712656800}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 2, y: 0.3, z: 2}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &6797730512196693279
 PrefabInstance:
   m_ObjectHideFlags: 0

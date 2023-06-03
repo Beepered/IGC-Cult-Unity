@@ -21,7 +21,14 @@ public class GameManager : MonoBehaviour
     public void OnPlaceBuilding(Building building) //actually placing the building
     {
         vc.money -= building.cost;
-        vc.insanity_mod += building.insanity;
+        if(building.name == "Church")
+        {
+            vc.insanity_mod += vc.suspicion / 4;
+        }
+        else
+        {
+            vc.insanity_mod += building.insanity;
+        }
         vc.suspicion_mod += building.suspicion;
         vc.money_mod += building.money;
         vc.people_mod += building.people;
@@ -30,11 +37,18 @@ public class GameManager : MonoBehaviour
     public void SellBuilding(Building building)
     {
         vc.money_mod -= building.money; //reset variable modifiers
-        vc.insanity_mod -= building.insanity;
+        if (building.name == "Church")
+        {
+            vc.insanity_mod -= vc.suspicion / 4;
+        }
+        else
+        {
+            vc.insanity_mod -= building.insanity;
+        }
         vc.suspicion_mod -= building.suspicion;
         vc.people_mod -= building.people;
 
-        vc.money += building.cost / 2; //earn money back from selling, could give back certain amount or just half of the cost
+        vc.money += building.money_destruction; //earn money back from selling, could give back certain amount or just half of the cost
         vc.suspicion += building.suspicion_destruction;
     }
 

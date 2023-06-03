@@ -11,5 +11,6 @@ public class Building : ScriptableObject
     public int cost;
     public int insanity, suspicion, money;
     public float people;
-    public int suspicion_destruction;
+    public int suspicion_destruction, money_destruction;
+    public int model_number;
 }

@@ -26,11 +26,45 @@ public class BuildingPlacer : MonoBehaviour
     }
     private void Update()
     {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit))
+        {
+            if (hit.collider.tag == "Tile")
+            {
+                Tile obj = hit.collider.gameObject.GetComponent<Tile>();
+                if (!obj.occupied && (placing || selling))
+                {
+                    placementIndicator.SetActive(true);
+                    placementIndicator.transform.position = obj.transform.position;
+                    if(placing && Input.GetMouseButtonDown(0))
+                    {
+                        PlaceBuilding(obj.transform.position, obj);
+                    }
+                    else if(selling && Input.GetMouseButtonDown(0))
+                    {
+                        GameManager.inst.SellBuilding(obj.building);
+                        obj.building = null;
+                        Destroy(obj.building_object);
+                        obj.occupied = false;
+                        CancelPlacement();
+                    }
+                }
+                else
+                {
+                    placementIndicator.SetActive(false);
+                }
+            }
+            else
+            {
+                placementIndicator.SetActive(false);
+            }
+        }
         if (Input.GetKeyDown(KeyCode.Escape)) //cancel building placement
         {
             CancelPlacement();
         }
-            
+        /*
         if (Time.time - last_update_time > update_rate && (placing || selling)) //snap to grid
         {
             last_update_time = Time.time;
@@ -80,17 +114,19 @@ public class BuildingPlacer : MonoBehaviour
                 CancelPlacement();
             }
         }
+        */
     }
 
     public void BeginPlacement(Building building)
     {
         if(vc.money >= building.cost)
         {
-            selling = true; //if you are selling but want to place instead
+            selling = false; //if you are selling but want to place instead
             placing = true; //you can place buildings now
             currBuilding = building;
             placementIndicator.SetActive(true); //make it visible
-            placementIndicator.GetComponent<PlacementIndicator>().placing = true;
+            //change placementIndicator's object
+            placementIndicator.GetComponent<PlacementIndicator>().ModelSwitch(building.model_number);
             foreach (Tile t in tiles)
             {
                 t.GetComponent<Renderer>().enabled = true;
@@ -108,21 +144,17 @@ public class BuildingPlacer : MonoBehaviour
     {
         placing = false;
         selling = false;
-        placementIndicator.GetComponent<PlacementIndicator>().placing = false;
-        placementIndicator.GetComponent<PlacementIndicator>().selling = false;
         placementIndicator.SetActive(false);
         foreach (Tile t in tiles)
         {
             t.GetComponent<Renderer>().enabled = false;
         }
     }
-
     public void BeginSelling()
     {
         placing = false; //if you are placing but want to sell instead
         selling = true;
         placementIndicator.SetActive(true);
-        placementIndicator.GetComponent<PlacementIndicator>().selling = true;
         foreach (Tile t in tiles)
         {
             t.GetComponent<Renderer>().enabled = true;

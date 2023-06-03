@@ -17,6 +17,8 @@ MonoBehaviour:
   cost: 150
   insanity: 0
   suspicion: 0
-  money: 0
+  money: -50
   people: 0
-  suspicion_destruction: 0
+  suspicion_destruction: -25
+  money_destruction: -60
+  model_number: 4

@@ -11,10 +11,7 @@ public class EventHandler : MonoBehaviour
     public GameObject eventImage;
     public GameObject button1, button2; //2 buttons in case there are the "2 option events", button 1 is always active
     public TMP_Text button1_text, button2_text, event_text;
-    bool two_options;
     int option1_people_mod, option1_insanity, option1_suspicion, option1_money, option2_people_mod, option2_insanity, option2_suspicion, option2_money;
-    string option1_string, option2_string;
-    int option1_turns, option2_turns;
 
     public Dictionary<string, int> event_turns = new Dictionary<string, int>(); //to keep track of how many turns there are left on random event effects
     public void RandomEvent()
@@ -175,6 +172,11 @@ public class EventHandler : MonoBehaviour
                 event_text.text = "Festival for the Rest of All:\n\nIt’s a holiday weekend, and as every city planner knows, that means the big bucks are coming. Tourists will be coming in for that nice, fish monster-free beach and tacky gift shop tat. The cheap tourists we can use as sacrifices.\n\nPeople multiplier doubled for this round";
                 AddEvent("Festival for the Rest of All", 1);
                 break;
+            /*
+             * destroy random building
+             * MoveButton(0);
+             * 
+             */
         }
         if(event_turns != null)
         {

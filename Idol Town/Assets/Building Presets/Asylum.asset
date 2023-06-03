@@ -20,3 +20,5 @@ MonoBehaviour:
   money: 0
   people: -1
   suspicion_destruction: -15
+  money_destruction: -40
+  model_number: 1

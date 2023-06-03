@@ -16,7 +16,9 @@ MonoBehaviour:
   name: Housing
   cost: 20
   insanity: 0
-  money: 0
   suspicion: 0
+  money: 0
   people: 0.25
-  suspicion_destruction: 0
+  suspicion_destruction: 5
+  money_destruction: 10
+  model_number: 0

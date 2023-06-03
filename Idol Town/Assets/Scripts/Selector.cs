@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 
 /*
+ * MIGHT NOT BE NEEDED
  * Manages the cursor
  * detects mouse coordinates on the World
  */
@@ -14,7 +15,6 @@ public class Selector : MonoBehaviour
 {
     private Camera cam;
     public static Selector inst;
-    //public GameObject cursor; //To get information from tiles
 
     private void Awake()
     {

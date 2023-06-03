@@ -1,7 +1,6 @@
 # IGC-Cult-Unity
-You can buy, sell, and place buildings down.
-Click on a building icon (if you have enough money) and then click on the ground to place the building. Selling a building currently gives 50% of the cost back and removes the variable changes.
-The buildings get placed at the cursor using the nearest distance.
-You can now cancel out of placing/selling a building when you press on the opposite button. (EX: you are currently placing a building, but want to sell instead, if you press "sell" you are now selling)
-You can get information about a bulding when your cursor is over a building or button. It tells you the name, cost, variable changes, and money back when you sell it.
-I STILL have to work on the random events.
+The building cursor finally shows the building before you put it down.   
+Click on a building to buy and it will show the building when you hover over a tile that is does not already have a building in it.   
+It works by having the buildings already spawned and turning them on or off when you choose a building to build.   
+This might be annoying later because not all the buildings are made, but that is a later problem.   
+Building information is also slightly different.   

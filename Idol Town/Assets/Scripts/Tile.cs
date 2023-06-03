@@ -6,18 +6,13 @@ public class Tile : MonoBehaviour
 {
     public bool occupied;
 
-    public Color green;
-    public Color red;
+    public Color green, red;
 
     public Renderer renderer;
     public Building building;
-    public GameObject building_object;
+    public GameObject building_object; //the actual physical building not just its information
 
-    public string building_name;
-    public int cost;
-    public int insanity, money, suspicion, suspicion_destruction;
-    public float people;
-    public string info_text; //variable controller will just take this string so it looks better
+    public string building_info; //variable controller will just take this string so it looks better
 
     public VariableController vc;
 
@@ -31,41 +26,37 @@ public class Tile : MonoBehaviour
         if (occupied)
         {
             renderer.material.color = red;
-            building_name = building.name;
-            cost = building.cost;
-            insanity = building.insanity;
-            money = building.money;
-            suspicion = building.suspicion;
-            people = building.people;
-            suspicion_destruction = building.suspicion_destruction;
-            if (building_name == "Church") //if the building is a church then you do this
-            {
-                insanity = vc.suspicion / 4;
-            }
-
             //text for when the cursor is over the object
-            info_text = building_name + ": " + cost + "\n\nEvery turn:\n";
-            if(insanity != 0)
+            building_info = building.name + ": " + building.cost + "\n\n";
+            if (building.name == "Housing") //just exists because housing has SPECIAL text
             {
-                info_text += insanity + " insanity\n";
+                building_info += "+0.25 multiplier\n";
             }
-            if (suspicion != 0)
+            else
             {
-                info_text += suspicion + " suspicion\n";
+                building_info += "Every turn:\n";
+                if (building.name == "Church")
+                {
+                    building_info += " (suspicion / 4) insanity\n";
+                }
+                else if (building.insanity != 0)
+                {
+                    building_info += building.insanity + " insanity\n";
+                }
+                if (building.suspicion != 0)
+                {
+                    building_info += building.suspicion + " suspicion\n";
+                }
+                if (building.money != 0)
+                {
+                    building_info += building.money + " money\n";
+                }
+                if (building.people != 0)
+                {
+                    building_info += building.people + " people\n";
+                }
             }
-            if (money != 0)
-            {
-                info_text += money + " money\n";
-            }
-            if (people != 0)
-            {
-                info_text += people + " people\n";
-            }
-            info_text += "\nsold: " + cost / 2;
-            if (suspicion_destruction != 0)
-            {
-                info_text += " + " + suspicion_destruction + " suspicion";
-            }
+            building_info += "\nsold: " + building.money_destruction + " money + " + building.suspicion_destruction + " suspicion";
         }
         else
         {

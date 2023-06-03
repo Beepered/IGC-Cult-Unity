@@ -16,7 +16,9 @@ MonoBehaviour:
   name: Bar
   cost: 40
   insanity: 0
-  money: -10
   suspicion: -1
+  money: -10
   people: 0
   suspicion_destruction: 10
+  money_destruction: 20
+  model_number: 1
