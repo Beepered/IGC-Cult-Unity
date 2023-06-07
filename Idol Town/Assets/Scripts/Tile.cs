@@ -63,4 +63,11 @@ public class Tile : MonoBehaviour
             renderer.material.color = green;
         }
     }
+
+    public void DestroyBuilding()
+    {
+        building = null;
+        Destroy(building_object);
+        occupied = false;
+    }
 }
