@@ -11,20 +11,6 @@ using TMPro;
 public class PlacementIndicator : MonoBehaviour
 {
     public GameObject[] models;
-    /*
-    public GameObject indicator;
-    public Renderer renderer;
-
-    public Color available, unavailable;
-
-    public bool placing = false, selling = false;
-    
-    private void Start()
-    {
-        renderer = indicator.GetComponent<Renderer>();
-        renderer.material.color = available;
-    }
-    */
 
     //When you choose to place a building the placement indicator shows a preview of the building
     //turns on the building that you are placing and turns off all other buildings

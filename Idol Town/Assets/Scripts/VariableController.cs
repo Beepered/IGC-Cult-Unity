@@ -10,26 +10,28 @@ public class VariableController : MonoBehaviour
     public float people_mod;
     public float event_people_mod = 1, event_insanity_mod = 1, event_money_mod = 1, event_suspicion_mod = 1; //event changes because it applies to all buildings
     public int turns = 0;
-    public bool turn_end = false;
+    public bool can_end_turn = true, turn_end = false;
     public TMP_Text turn_text, var_text;
 
     //building information text
     public TMP_Text building_info;
 
     public EventHandler eh;
+    public BuildingPlacer bp;
 
     void Update()
     {
+        UpdateModifiers();
         var_text.text = $"Population: {(people_mod * event_people_mod) * 100}%\nInsanity: {insanity} + ({insanity_mod} * {((people_mod * event_people_mod) * event_insanity_mod) * 100}%)\nSuspicion: {suspicion} + ({suspicion_mod} * {((people_mod * event_people_mod) * event_suspicion_mod) * 100}%)\nMoney: {money} + ({money_mod} * {((people_mod * event_people_mod) * event_money_mod) * 100}%)";
         if (turn_end)
         {
-            insanity += (int) (insanity_mod * ((people_mod * event_people_mod) * event_insanity_mod)); //people modify variables, but it has to be a large enough population
-            suspicion += (int) (suspicion_mod * ((people_mod * event_people_mod) * event_suspicion_mod));
-            money += (int) (money_mod * ((people_mod * event_people_mod) * event_money_mod));
+            insanity += (int)(insanity_mod * ((people_mod * event_people_mod) * event_insanity_mod));
+            suspicion += (int)(suspicion_mod * ((people_mod * event_people_mod) * event_suspicion_mod));
+            money += (int)(money_mod * ((people_mod * event_people_mod) * event_money_mod));
             turns++;
             turn_text.text = $"Turns: {turns}";
             turn_end = false;
-            if(insanity >= 100)
+            if (insanity >= 100)
             {
                 Debug.Log("You WIN: Insanity was greater than or equal to 100");
             }
@@ -37,6 +39,7 @@ public class VariableController : MonoBehaviour
             {
                 Debug.Log("You LOSE: Suspicion was greater than or equal to 100");
             }
+            can_end_turn = false; //you must press a button on a random event to turn can_end_turn back to true
             eh.RandomEvent(); //event changes happen after variable changes because production event changes happen after you press ok
         }
 
@@ -101,4 +104,36 @@ public class VariableController : MonoBehaviour
         building_info.gameObject.SetActive(false);
     }
 
+    public void EndTurn()
+    {
+        if (can_end_turn) //just in case you press end turn during a random event
+        {
+            turn_end = true;
+        }
+    }
+
+    public void UpdateModifiers()
+    {
+        int insan = 0, sus = 0, mon = 0;
+        //takes every building's modifiers and adds it to VC's modifiers
+        //just in case you get an event that changes a specific building's production
+        foreach (Tile t in bp.tiles)
+        {
+            Building b = t.building;
+            if (b != null)
+            {
+                if (b.name == "Church")
+                {
+                    insan += suspicion / 4;
+                }
+                else
+                {
+                    insan += b.insanity;
+                    sus += b.suspicion;
+                    mon += b.money;
+                }
+            }
+        }
+        insanity_mod = insan; suspicion_mod = sus; money_mod = mon;
+    }
 }

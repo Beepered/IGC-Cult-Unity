@@ -2,15 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Everything about buildings and tiles exists inside BuildingPlacer
+ * Building placer lets you place buildings down and sell them
+ */
+
+
 public class BuildingPlacer : MonoBehaviour
 {
     private bool placing = false, selling = false;
     private Building currBuilding;
-    /*
-    private float update_rate = 0.05f;
-    private float last_update_time;
-    private Vector3 curr_Placement_Pos;
-    */
     public GameObject placementIndicator;
     public static BuildingPlacer inst;
     public VariableController vc;
@@ -20,10 +21,7 @@ public class BuildingPlacer : MonoBehaviour
     {
         inst = this;
     }
-    private void Start()
-    {
-        vc = GetComponent<VariableController>();
-    }
+
     private void Update()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -45,9 +43,10 @@ public class BuildingPlacer : MonoBehaviour
                 else if (selling && obj.occupied)
                 {
                     placementIndicator.SetActive(true);
+                    placementIndicator.transform.position = obj.transform.position;
                     if (Input.GetMouseButtonDown(0))
                     {
-                        GameManager.inst.SellBuilding(obj.building);
+                        SellBuilding(obj.building);
                         obj.DestroyBuilding();
                         CancelPlacement();
                     }
@@ -66,92 +65,20 @@ public class BuildingPlacer : MonoBehaviour
         {
             CancelPlacement();
         }
-        /*
-        if (Time.time - last_update_time > update_rate && (placing || selling)) //snap to grid
-        {
-            last_update_time = Time.time;
-            curr_Placement_Pos = Selector.inst.GetCurTilePosition();
-            placementIndicator.transform.position = curr_Placement_Pos;
-        }
-        if (placing && Input.GetMouseButtonDown(0)) //clicked then place building
-        {
-            Tile nearest_tile = null;
-            float shortest_dist = float.MaxValue;
-            foreach(Tile t in tiles)
-            {
-                float dist = Vector3.Distance(t.transform.position, placementIndicator.transform.position);
-                if(dist < shortest_dist)
-                {
-                    shortest_dist = dist;
-                    nearest_tile = t;
-                }
-            }
-            if (!nearest_tile.occupied)
-            {
-                PlaceBuilding(nearest_tile.transform.position, nearest_tile);
-                nearest_tile.occupied = true;
-                nearest_tile.building = currBuilding;
-            }
-        }
-        else if(selling && Input.GetMouseButtonDown(0))
-        {
-            Tile nearest_tile = null;
-            float shortest_dist = float.MaxValue;
-            foreach (Tile t in tiles)
-            {
-                float dist = Vector3.Distance(t.transform.position, placementIndicator.transform.position);
-                if (dist < shortest_dist)
-                {
-                    shortest_dist = dist;
-                    nearest_tile = t;
-                }
-            }
-            if (nearest_tile.occupied)
-            {
-                GameManager.inst.SellBuilding(nearest_tile.building);
-                nearest_tile.building = null;
-                Destroy(nearest_tile.building_object);
-                nearest_tile.occupied = false;
-                
-                CancelPlacement();
-            }
-        }
-        */
     }
 
-    public void BeginPlacement(Building building) //used by building buttons
+    public void BeginPlacement(Building building) //used by building buttons: sets the cursor to show a building preview
     {
         if(vc.money >= building.cost)
         {
             selling = false; //if you are selling but want to place instead
             placing = true; //you can place buildings now
             currBuilding = building;
-            placementIndicator.SetActive(true);
-            //change placementIndicator's object
-            placementIndicator.GetComponent<PlacementIndicator>().ModelSwitch(building.model_number);
+            placementIndicator.GetComponent<PlacementIndicator>().ModelSwitch(building.model_number); //change placementIndicator's object
             foreach (Tile t in tiles)
             {
                 t.GetComponent<Renderer>().enabled = true;
             }
-        }
-    }
-    void PlaceBuilding(Vector3 position, Tile tile)
-    {
-        GameObject buildingObj = Instantiate(currBuilding.prefab, position, Quaternion.identity);
-        tile.building_object = buildingObj;
-        tile.occupied = true;
-        GameManager.inst.OnPlaceBuilding(currBuilding);
-        tile.building = currBuilding;
-        CancelPlacement();
-    }
-    public void CancelPlacement()
-    {
-        placing = false;
-        selling = false;
-        placementIndicator.SetActive(false);
-        foreach (Tile t in tiles)
-        {
-            t.GetComponent<Renderer>().enabled = false;
         }
     }
     public void BeginSelling() //used by the sell button
@@ -165,4 +92,60 @@ public class BuildingPlacer : MonoBehaviour
             t.GetComponent<Renderer>().enabled = true;
         }
     }
+
+    void PlaceBuilding(Vector3 position, Tile tile)
+    {
+        GameObject buildingObj = Instantiate(currBuilding.prefab, position, Quaternion.identity);
+        tile.building_object = buildingObj;
+        tile.occupied = true;
+        OnPlaceBuilding(currBuilding);
+        tile.building = currBuilding;
+        CancelPlacement();
+    }
+
+    public void OnPlaceBuilding(Building building) //actually placing the building
+    {
+        vc.money -= building.cost;
+        if (building.name == "Church")
+        {
+            vc.insanity_mod += vc.suspicion / 4;
+        }
+        else
+        {
+            vc.insanity_mod += building.insanity;
+        }
+        vc.suspicion_mod += building.suspicion;
+        vc.money_mod += building.money;
+        vc.people_mod += building.people;
+    }
+
+    public void SellBuilding(Building building)
+    {
+        vc.money_mod -= building.money; //reset variable modifiers
+        if (building.name == "Church")
+        {
+            vc.insanity_mod -= vc.suspicion / 4;
+        }
+        else
+        {
+            vc.insanity_mod -= building.insanity;
+        }
+        vc.suspicion_mod -= building.suspicion;
+        vc.people_mod -= building.people;
+
+        vc.money += building.money_destruction; //earn money back from selling, could give back certain amount or just half of the cost
+        vc.suspicion += building.suspicion_destruction;
+    }
+
+    public void CancelPlacement()
+    {
+        placing = false;
+        selling = false;
+        placementIndicator.SetActive(false);
+        foreach (Tile t in tiles)
+        {
+            t.GetComponent<Renderer>().enabled = false;
+        }
+    }
+    
 }

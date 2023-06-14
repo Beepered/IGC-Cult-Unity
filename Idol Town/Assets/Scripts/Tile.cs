@@ -16,16 +16,12 @@ public class Tile : MonoBehaviour
 
     public VariableController vc;
 
-    void Start()
-    {
-        renderer.material.color = Color.green;
-    }
-
     void Update()
     {
         if (occupied)
         {
             renderer.material.color = red;
+
             //text for when the cursor is over the object
             building_info = building.name + ": " + building.cost + "\n\n";
             if (building.name == "Housing") //just exists because housing has SPECIAL text

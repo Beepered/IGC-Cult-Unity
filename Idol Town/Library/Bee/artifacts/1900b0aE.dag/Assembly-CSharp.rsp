@@ -349,7 +349,6 @@
 "Assets/Scripts/Building.cs"
 "Assets/Scripts/BuildingPlacer.cs"
 "Assets/Scripts/EventHandler.cs"
-"Assets/Scripts/GameManager.cs"
 "Assets/Scripts/PlacementIndicator.cs"
 "Assets/Scripts/Selector.cs"
 "Assets/Scripts/Tile.cs"

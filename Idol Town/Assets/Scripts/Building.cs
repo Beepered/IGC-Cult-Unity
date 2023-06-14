@@ -12,5 +12,5 @@ public class Building : ScriptableObject
     public int insanity, suspicion, money;
     public float people;
     public int suspicion_destruction, money_destruction;
-    public int model_number;
+    public int model_number; //used for the building placer cursor
 }
