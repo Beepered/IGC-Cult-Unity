@@ -16,6 +16,8 @@ public class VariableController : MonoBehaviour
     //building information text
     public TMP_Text building_info;
 
+    public GameObject normal_buildings, cult_buildings;
+
     public EventHandler eh;
     public BuildingPlacer bp;
 
@@ -62,6 +64,30 @@ public class VariableController : MonoBehaviour
                 }
             }
         }
+    }
+    public void UpdateModifiers()
+    {
+        int insan = 0, sus = 0, mon = 0;
+        //takes every building's modifiers and adds it to VC's modifiers
+        //just in case you get an event that changes a specific building's production
+        foreach (Tile t in bp.tiles)
+        {
+            Building b = t.building;
+            if (b != null)
+            {
+                if (b.name == "Church")
+                {
+                    insan += suspicion / 4;
+                }
+                else
+                {
+                    insan += b.insanity;
+                    sus += b.suspicion;
+                    mon += b.money;
+                }
+            }
+        }
+        insanity_mod = insan; suspicion_mod = sus; money_mod = mon;
     }
 
     public void BuildingInfo(Building building)
@@ -112,28 +138,18 @@ public class VariableController : MonoBehaviour
         }
     }
 
-    public void UpdateModifiers()
+    public void BuildingBar(int x)
     {
-        int insan = 0, sus = 0, mon = 0;
-        //takes every building's modifiers and adds it to VC's modifiers
-        //just in case you get an event that changes a specific building's production
-        foreach (Tile t in bp.tiles)
+        if(x == 0)
         {
-            Building b = t.building;
-            if (b != null)
-            {
-                if (b.name == "Church")
-                {
-                    insan += suspicion / 4;
-                }
-                else
-                {
-                    insan += b.insanity;
-                    sus += b.suspicion;
-                    mon += b.money;
-                }
-            }
+            normal_buildings.SetActive(true);
+            cult_buildings.SetActive(false);
         }
-        insanity_mod = insan; suspicion_mod = sus; money_mod = mon;
+        else
+        {
+            normal_buildings.SetActive(false);
+            cult_buildings.SetActive(true);
+        }
     }
+    
 }

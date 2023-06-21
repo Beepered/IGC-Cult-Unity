@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c036087b4b2482146ac399f86e483fd5, type: 3}
   m_Name: Theater
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 6031994099968627476, guid: 96f1755b01ada724cb1621897278a532, type: 3}
   name: Theater
   cost: 25
   insanity: 1
@@ -21,4 +21,4 @@ MonoBehaviour:
   people: 0
   suspicion_destruction: -5
   money_destruction: -20
-  model_number: 8
+  model_number: 5
