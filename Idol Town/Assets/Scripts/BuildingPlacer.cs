@@ -86,7 +86,7 @@ public class BuildingPlacer : MonoBehaviour
         placing = false; //if you are placing but want to sell instead
         selling = true;
         placementIndicator.SetActive(true);
-        placementIndicator.GetComponent<PlacementIndicator>().ModelSwitch(4); //the sell cursor
+        placementIndicator.GetComponent<PlacementIndicator>().ModelSwitch(10); //the sell cursor
         foreach (Tile t in tiles)
         {
             t.GetComponent<Renderer>().enabled = true;
@@ -133,7 +133,7 @@ public class BuildingPlacer : MonoBehaviour
         vc.suspicion_mod -= building.suspicion;
         vc.people_mod -= building.people;
 
-        vc.money += building.money_destruction; //earn money back from selling, could give back certain amount or just half of the cost
+        vc.money += building.money_destruction;
         vc.suspicion += building.suspicion_destruction;
     }
 
